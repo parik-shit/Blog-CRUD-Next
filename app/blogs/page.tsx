@@ -11,7 +11,7 @@ import {
 
 import Link from 'next/link'
 
-import { posts } from '@/app/data/posts'
+
 
 
 

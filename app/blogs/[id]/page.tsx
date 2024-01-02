@@ -1,10 +1,9 @@
 import React, { FC } from 'react'
-import { posts } from '@/app/data/posts';
 import Comments from '../../components/comments';
 import FormComment from '../../components/formComments';
 import prisma from '@/lib/db';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
+
 import ReadMore from '@/app/components/toggle-readmore';
 import generateTexts from '@/app/components/generate-texts';
 interface BlogDetailPageProps {
@@ -12,8 +11,11 @@ interface BlogDetailPageProps {
       id: string;
     };
   }
+  
+
+
   const BlogDetailPage: FC<BlogDetailPageProps> = async ({ params }) => {
-    const post = await prisma.post.findFirst({
+    const post: any = await prisma.post.findFirst({
       where: {
         id: params.id,
       },
